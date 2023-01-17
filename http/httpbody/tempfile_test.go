@@ -64,7 +64,6 @@ func TestTempFileErrorRead(t *testing.T) {
 			TempFile: &TempFile{
 				File:     nil,
 				filename: []byte(filename),
-				err:      nil,
 				mode:     ModeReadWrite,
 			},
 			Err: nil,
@@ -74,7 +73,6 @@ func TestTempFileErrorRead(t *testing.T) {
 			TempFile: &TempFile{
 				File:     nil,
 				filename: nil,
-				err:      nil,
 				mode:     ModeWrite,
 			},
 			Err: nil,
@@ -84,7 +82,6 @@ func TestTempFileErrorRead(t *testing.T) {
 			TempFile: &TempFile{
 				File:     nil,
 				filename: nil,
-				err:      nil,
 				mode:     ModeClose,
 			},
 			Err: nil,
@@ -130,7 +127,6 @@ func TestTempFileWrite(t *testing.T) {
 			TempFile: &TempFile{
 				File:     nil,
 				filename: []byte(filename),
-				err:      nil,
 				mode:     ModeReadWrite,
 			},
 			Err: nil,
@@ -140,8 +136,8 @@ func TestTempFileWrite(t *testing.T) {
 			TempFile: &TempFile{
 				File:     nil,
 				filename: []byte(filename),
-				err:      nil,
-				mode:     ModeRead,
+
+				mode: ModeRead,
 			},
 			Err: io.EOF,
 			Res: "",
@@ -150,7 +146,6 @@ func TestTempFileWrite(t *testing.T) {
 			TempFile: &TempFile{
 				File:     nil,
 				filename: []byte(filename),
-				err:      nil,
 				mode:     ModeClose,
 			},
 			Err: io.EOF,
