@@ -30,7 +30,7 @@ func encrypt(key []byte, src, dst string) error {
 	var (
 		bf  = bufio.NewWriter(df)
 		buf = make([]byte, 1024*128)
-		i   = 0
+		i   int
 	)
 
 	for {
@@ -82,7 +82,7 @@ func decrypt(key []byte, src, dst string) error {
 	var (
 		bf  = bufio.NewWriter(df)
 		buf = make([]byte, 1024*128)
-		i   = 0
+		i   int
 	)
 
 	for {
